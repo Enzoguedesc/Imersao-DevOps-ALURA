@@ -1,0 +1,21 @@
+# A seção 'services' é onde definimos os diferentes contêineres que compõem nossa aplicação.
+services:
+  # 'app' é o nome que estamos dando ao nosso serviço/contêiner da aplicação FastAPI.
+  app:
+    build: .
+    # A instrução 'build' diz ao Docker Compose para construir uma imagem a partir de um Dockerfile.
+    # O '.' indica que o Dockerfile está localizado no diretório atual (a raiz do projeto).
+
+    container_name: api-imercao-alura    # Nome do contêiner.
+
+    volumes:
+      - .:/app
+    # A seção 'volumes' monta um diretório do seu computador (host) para dentro do contêiner.
+    # '.:/app' mapeia o diretório atual ('.') do host para o diretório '/app' no contêiner.
+    # Isso permite que as alterações no código local sejam refletidas instantaneamente no contêiner e que o banco de dados SQLite ('escola.db') seja salvo no seu diretório local.
+
+    ports:
+      - "8000:8000"
+    # A seção 'ports' mapeia portas entre o host e o contêiner.
+    # '"8000:8000"' expõe a porta 8000 do contêiner na porta 8000 do seu computador.
+    # O formato é "HOST:CONTAINER". Isso permite que você acesse a API em http://localhost:8000.

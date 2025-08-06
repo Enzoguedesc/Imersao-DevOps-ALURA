@@ -44,10 +44,20 @@ Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e
 
 6. **Acesse a documentação interativa:**
 
-   Abra o navegador e acesse:  
+   Abra o navegador e acesse:
    [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
    Aqui você pode testar todos os endpoints da API de forma interativa.
+
+---
+
+## Autenticando o Google Cloud
+
+```sh
+gcloud auth login
+gcloud config set project id-do-seu-projeto # Tem que ir no Google Cloud e procurar o id do seu projeto
+gcloud run deploy --port=8000
+```
 
 ---
 
@@ -66,3 +76,7 @@ Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e
 - Para reiniciar o banco, basta apagar o arquivo `escola.db` (isso apagará todos os dados).
 
 ---
+
+
+# Link da API
+https://api-imercao-alura-406388388949.southamerica-east1.run.app/docs
